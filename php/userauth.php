@@ -43,8 +43,6 @@ function loginUser($email, $password){
     $rows = mysqli_num_rows($result);
         if ($rows == 1) {
             $details = mysqli_fetch_assoc($result);
-            //print_r($details["full_names"]);
-            //$username = $details["full_names"]; 
             session_start();
             $_SESSION["username"] = $details["full_names"];
             header("location: ..\dashboard.php");
